@@ -6,7 +6,7 @@ export const createBooking = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.CREATE_BOOKING_REQUEST });
     const res = await axios.post(
-      `https://zany-gray-clam-gear.cyclic.app/appointments/create`,
+      `http://localhost:8000/appointments/create`,
       data
     );
     console.log(res);
@@ -19,7 +19,7 @@ export const createBooking = (data) => async (dispatch) => {
 export const createPatient = (data) => async (dispatch) => {
   try {
     const res = await axios.post(
-      `https://zany-gray-clam-gear.cyclic.app/patients/register`,
+      `http://localhost:8000/patients/register`,
       data
     );
     return res.data
@@ -33,7 +33,7 @@ export const createPatient = (data) => async (dispatch) => {
 //   try {
 //     dispatch({ type: types.GET_POST_REQUEST });
 //     const res = await axios.get(
-//       `https://zany-gray-clam-gear.cyclic.app/appointments`
+//       `http://localhost:8000/appointments`
 //     );
 //     dispatch({ type: types.GET_POST_SUCCESS, payload: res.data.post });
 //   } catch (error) {

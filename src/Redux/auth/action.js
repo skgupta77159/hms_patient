@@ -6,7 +6,7 @@ export const authLogin = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.LOGIN_USER_REQUEST });
     const res = await axios.post(
-      "https://zany-gray-clam-gear.cyclic.app/patients/login",
+      "http://localhost:8000/patients/login",
       data
     );
     console.log(res);
@@ -41,7 +41,7 @@ export const authLogout = () => async (dispatch) => {
 export const forgotPassword = (data) => async (dispatch) => {
   try {
     const res = await axios.post(
-      `https://zany-gray-clam-gear.cyclic.app/admin/forgot`,
+      `http://localhost:8000/admin/forgot`,
       data
     );
     return res.data;
